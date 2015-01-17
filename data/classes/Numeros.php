@@ -36,7 +36,11 @@ class Numeros {
     public function readFile($separator = ",", $formater = "<br>"){
         $this->file->readFile();
         $this->content = str_replace($separator,$formater,$this->file->content);
-        $this->json = json_encode(explode($separator,$this->file->content));
+        if($this->file->content != "") {
+            $this->json = json_encode(explode($separator, $this->file->content));
+        } else {
+            $this->json = '"error"';
+        }
     }
 
     public  function writeFile($separator = ",", $formater = "<br>"){

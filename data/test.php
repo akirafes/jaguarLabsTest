@@ -3,7 +3,7 @@ require('includes.php');
 header('Content-type: application/json');
 $vars = \utils\PhpVar::init();
 
-$json = '{"numeros":[1,6,10,19971.15564,11,56.7],"fileName":"otrotest.txt"}';
+$json = '{"numeros":[1,6,10,19971.15564,11,56.7],"fileName":"testSiguiente.txt"}';
 $json = json_decode($json);
 $fileName = "./files/".$json->fileName;
 $contenido = $json->numeros;
